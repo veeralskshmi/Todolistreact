@@ -19,15 +19,15 @@ function App()
   };
 
 
-  const[todos, setTodos] = useState([]);
+  const[todos, setTodos] = useState(initialTodos);
 
-  useEffect(()=> {
-    const storedTodos = JSON.parse(localStorage.getItem('todos'));
-    if(storedTodos)
-      {
-        setTodos(storedTodos);
-      }
-  }, []);
+  // useEffect(()=> {
+  //   const storedTodos = JSON.parse(localStorage.getItem('todos'));
+  //   if(storedTodos)
+  //     {
+  //       setTodos(storedTodos);
+  //     }
+  // }, []);
 
   useEffect(()=> {
     localStorage.setItem('todos', JSON.stringify(todos));
